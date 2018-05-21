@@ -3,7 +3,6 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
-#include <bitset>
 #include <sstream>
 #include "WString.h"
 #include <cmath>
@@ -37,20 +36,12 @@ int UpperB[8] = {0};
 int i;
 int reg;
 int dt = 0;
-unsigned int acount;
-int bcount;
-
 
 std::vector<int> reg_byte(8);
 std::vector<int> LowA(8);
 std::vector<int> UpA(8);
 std::vector<int> LowB(8);
 std::vector<int> UpB(8);
-std::vector<int> count(32);
-std::vector<int> byte_vals(6);
-std::vector<int> byteAB(32);
-
-
 
 
 
