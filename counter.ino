@@ -91,9 +91,10 @@ void setup() {
 
 //Data retrieval from 16-bit counter IC
 void getData(int reg, std::vector<int> & v){
-
-	digitalWrite(reg, LOW);
-	delayMicroseconds(30);
+    
+    //Transfer byte to output bus
+    digitalWrite(reg, LOW);
+    delayMicroseconds(30);
 
     //Read byte
     int b1 = digitalRead(Y0);
@@ -112,7 +113,8 @@ void getData(int reg, std::vector<int> & v){
     v[1] = b7;
     int b8 = digitalRead(Y7);
     v[0] = b8;
-    //Release byte from Y
+	
+    //Release byte from output bus
     digitalWrite(reg, HIGH);
     delayMicroseconds(30);
     
@@ -144,7 +146,7 @@ std::string comb_bytes(std::vector<int> &upA, std::vector<int> &lowA, std::vecto
 	for (std::vector<int>::iterator it = comb.begin(); it!=comb.end(); it++) {
 		ss << *it;
 	}
-    std::string byte1 = ss.str();
+    	std::string byte1 = ss.str();
 
 	return byte1;
 }
